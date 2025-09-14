@@ -7,6 +7,7 @@ const obj = {
             bathrooms: 3
         }
     },
+    
     property_2: {
         location: "South Africa - CPT",
             property_details: {
