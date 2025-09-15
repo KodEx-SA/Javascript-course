@@ -1,0 +1,96 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 800px;
+  overflow-x: auto; /* Enables horizontal scroll on small screens */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px; /* Keeps table structure on larger screens */
+}
+
+thead {
+  background: #0077b6;
+  color: white;
+}
+
+th,
+td {
+  padding: 14px 20px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f1f5f9;
+}
+
+tbody tr:hover {
+  background: #e0f2fe;
+  transition: background 0.3s ease;
+}
+
+th {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Mobile stacked card view */
+@media (max-width: 600px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none; /* Hide table header */
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  td {
+    text-align: right;
+    padding: 10px;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label); /* Add header text before each cell */
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0077b6;
+  }
+}
